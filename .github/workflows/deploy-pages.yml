@@ -1,4 +1,4 @@
-name: Deploy static site to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -25,12 +25,14 @@ jobs:
         uses: actions/checkout@v5
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:
-          path: .
+          path: |
+            index.html
+            styles.css
+            script.js
+            phd-care-clinic-mark.png
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
