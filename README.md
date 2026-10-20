@@ -14,6 +14,15 @@ Open `index.html` in a browser, or serve the directory with any static-file serv
 
 After setup, every push to `main` runs `.github/workflows/deploy-pages.yml` and deploys the latest site automatically. The workflow publishes only the HTML, CSS, JavaScript and logo files needed by the website.
 
+### First GitHub Pages deployment
+
+The reported `Get Pages site failed` error means Pages has not been enabled for the repository yet. Choose one one-time setup path:
+
+1. In **Settings → Pages**, select **GitHub Actions** as the source, then rerun the workflow.
+2. Or add a `PAGES_ENABLEMENT_TOKEN` repository secret containing a fine-grained personal access token with **Pages: write** and **Administration: write** access to this repository. The workflow uses it only to create the Pages site; later deployments use the built-in `GITHUB_TOKEN`.
+
+The workflow now uses Node 24-based Actions and the pinned Ubuntu 24.04 runner, so the Node 20 and `ubuntu-latest` migration notices are removed.
+
 ## Project files
 
 - `index.html` — all site content and semantic structure

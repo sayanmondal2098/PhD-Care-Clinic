@@ -23,10 +23,18 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v5
+      # Optional first-run bootstrap. The fine-grained token is only needed
+      # when the repository has never had a GitHub Pages site.
+      - name: Enable GitHub Pages on first deployment
+        if: ${{ secrets.PAGES_ENABLEMENT_TOKEN != '' }}
+        uses: actions/configure-pages@v6
+        with:
+          enablement: true
+          token: ${{ secrets.PAGES_ENABLEMENT_TOKEN }}
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Upload site
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: |
             index.html
@@ -35,4 +43,4 @@ jobs:
             phd-care-clinic-mark.png
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
