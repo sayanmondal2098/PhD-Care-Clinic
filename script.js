@@ -25,7 +25,7 @@ document.querySelectorAll('.reveal').forEach((element) => observer.observe(eleme
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 // Static-friendly enquiry: set this to the clinic inbox before publishing.
-const clinicEmail = 'hello@phdcareclinic.org';
+const clinicEmail = 'sayanmondal2098@gmail.com';
 const enquiryForm = document.querySelector('#enquiry-form');
 const formStatus = document.querySelector('.form-status');
 enquiryForm?.addEventListener('submit', (event) => {

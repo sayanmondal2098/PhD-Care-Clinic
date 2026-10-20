@@ -8,7 +8,7 @@ Open `index.html` in a browser, or serve the directory with any static-file serv
 
 ## Before publishing
 
-1. In `script.js`, replace `hello@phdcareclinic.org` with the clinic's real enquiry inbox. The form opens the visitor's email application—no data is collected or stored by this static site.
+1. The enquiry form is configured to open a message addressed to `sayanmondal2098@gmail.com`. It uses the visitor's email application—no data is collected or stored by this static site.
 2. Update any copy, prices or legal/contact details that need to reflect the operating clinic.
 3. In the repository’s **Settings → Pages**, select **GitHub Actions** as the deployment source. This one-time setup is required before the workflow can deploy.
 
