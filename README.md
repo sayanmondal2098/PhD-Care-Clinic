@@ -10,9 +10,9 @@ Open `index.html` in a browser, or serve the directory with any static-file serv
 
 1. In `script.js`, replace `hello@phdcareclinic.org` with the clinic's real enquiry inbox. The form opens the visitor's email application—no data is collected or stored by this static site.
 2. Update any copy, prices or legal/contact details that need to reflect the operating clinic.
-3. Push this repository to GitHub. In the repository’s **Settings → Pages**, select **GitHub Actions** as the deployment source once.
+3. In the repository’s **Settings → Pages**, select **GitHub Actions** as the deployment source. This one-time setup is required before the workflow can deploy.
 
-After that one-time GitHub Pages setting, every push to `main` runs `.github/workflows/deploy-pages.yml` and deploys the latest site automatically.
+After setup, every push to `main` runs `.github/workflows/deploy-pages.yml` and deploys the latest site automatically. The workflow publishes only the HTML, CSS, JavaScript and logo files needed by the website.
 
 ## Project files
 
